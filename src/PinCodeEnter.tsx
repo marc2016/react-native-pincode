@@ -87,7 +87,7 @@ export type IProps = {
   touchIDDisabled: boolean
   touchIDSentence: string
   touchIDTitle?: string
-  touchIDPasscodeFallback: boolean
+  touchIDPasscodeFallback?: boolean
 }
 
 export type IState = {

@@ -75,6 +75,7 @@ export declare type IProps = {
     touchIDDisabled: boolean;
     touchIDSentence: string;
     touchIDTitle?: string;
+    touchIDPasscodeFallback?: boolean;
 };
 export declare type IState = {
     pinCodeStatus: PinResultStatus;

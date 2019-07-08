@@ -111,6 +111,7 @@ export type IProps = {
   touchIDSentence?: string
   touchIDTitle?: string
   validationRegex?: RegExp
+  touchIDPasscodeFallback?: boolean
 }
 
 export type IState = {
@@ -314,6 +315,7 @@ class PINCode extends React.PureComponent<IProps, IState> {
           touchIDDisabled={this.props.touchIDDisabled || touchIDDisabledDefault}
           touchIDSentence={this.props.touchIDSentence || "To unlock your application"}
           touchIDTitle={this.props.touchIDTitle || touchIDTitleDefault}
+          touchIDPasscodeFallback={this.props.touchIDPasscodeFallback || false}
         />}
         {(pinStatus === PinResultStatus.locked ||
           this.state.internalPinStatus === PinResultStatus.locked ||
