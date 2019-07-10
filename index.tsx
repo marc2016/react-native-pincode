@@ -125,6 +125,7 @@ const pinAttemptsAsyncStorageNameDefault = "pinAttemptsRNPin";
 const pinCodeKeychainNameDefault = "reactNativePinCode";
 const touchIDDisabledDefault = false;
 const touchIDTitleDefault = 'Authentication Required';
+const touchIDPasscodeFallbackDefault = false;
 
 class PINCode extends React.PureComponent<IProps, IState> {
 
@@ -315,7 +316,7 @@ class PINCode extends React.PureComponent<IProps, IState> {
           touchIDDisabled={this.props.touchIDDisabled || touchIDDisabledDefault}
           touchIDSentence={this.props.touchIDSentence || "To unlock your application"}
           touchIDTitle={this.props.touchIDTitle || touchIDTitleDefault}
-          touchIDPasscodeFallback={this.props.touchIDPasscodeFallback || false}
+          touchIDPasscodeFallback={this.props.touchIDPasscodeFallback || touchIDPasscodeFallbackDefault}
         />}
         {(pinStatus === PinResultStatus.locked ||
           this.state.internalPinStatus === PinResultStatus.locked ||
