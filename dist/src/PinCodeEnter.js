@@ -89,6 +89,7 @@ class PinCodeEnter extends React.PureComponent {
         });
     }
     async launchTouchID() {
+        const touchIDPasscodeFallback = this.props.touchIDPasscodeFallback;
         const optionalConfigObject = {
             imageColor: '#e00606',
             imageErrorColor: '#ff0000',
@@ -97,7 +98,7 @@ class PinCodeEnter extends React.PureComponent {
             cancelText: this.props.textCancelButtonTouchID || 'Cancel',
             fallbackLabel: 'Show Passcode',
             unifiedErrors: false,
-            passcodeFallback: this.props.touchIDPasscodeFallback
+            passcodeFallback: touchIDPasscodeFallback
         };
         try {
             await react_native_touch_id_1.default.authenticate(this.props.touchIDSentence, Object.assign({}, optionalConfigObject, {
