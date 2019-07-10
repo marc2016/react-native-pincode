@@ -195,7 +195,6 @@ class PinCodeEnter extends React.PureComponent<IProps, IState> {
   }
 
   async launchTouchID() {
-    const touchIDPasscodeFallback = this.props.touchIDPasscodeFallback;
     const optionalConfigObject = {
       imageColor: '#e00606',
       imageErrorColor: '#ff0000',
@@ -204,7 +203,7 @@ class PinCodeEnter extends React.PureComponent<IProps, IState> {
       cancelText: this.props.textCancelButtonTouchID || 'Cancel',
       fallbackLabel: 'Show Passcode',
       unifiedErrors: false,
-      passcodeFallback: touchIDPasscodeFallback
+      passcodeFallback: false
     }
     try {
       await TouchID.authenticate(
